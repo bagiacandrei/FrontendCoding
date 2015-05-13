@@ -5,10 +5,9 @@
 hrApp.controller('MathController',['$scope','$rootScope',function($scope,$rootScope) {
 
     $scope.oper=function() {
-        $scope.addition = $scop.nra + $scop.nrb;
-        alert("sdsd");
-        $scope.substraction = $scop.nra - $scop.nrb;
-        $scope.multiplication= $scop.nra * $scop.nrb;
-        $scope.division = $scop.nra / $scop.nrb;
+        $scope.addition = $scope.nra + $scope.nrb;
+        $scope.substraction = $scope.nra - $scope.nrb;
+        $scope.multiplication= $scope.nra * $scope.nrb;
+        $scope.division = $scope.nra / $scope.nrb;
     }
 }]);
