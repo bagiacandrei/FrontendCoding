@@ -23,8 +23,27 @@ hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '
                 $scope.employee = data;
                 $location.url('/employeeview/'+$scope.employee.employeeId);
             });
-    }
+    };
+        $http({url: $commonResourcesFactory.findAllDepartmentsUrl, method: 'GET'}).
+            success(function (data) {
+                $scope.departments = data;
 
+            });
+        $http({url: $commonResourcesFactory.findAllEmployeesUrl, method: 'GET'}).
+            success(function (data) {
+                $scope.managers = data;
+
+            });
+        $http({url: $commonResourcesFactory.findAllJobsUrl, method: 'GET'}).
+            success(function (data) {
+                $scope.jobs = data;
+
+            });
+            $http({url: $commonResourcesFactory.findOneEmployeeUrl+$routeParams.employeeid , method: 'GET'}).
+                success(function (data) {
+                    $scope.employee = data;
+
+                });
     $scope.datePattern = /^\d{4}-\d{2}-\d{2}$/;
     $scope.commissionPattern =  /^[0]\.\d{1}(\d)?$/;
 

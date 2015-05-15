@@ -17,7 +17,7 @@ hrApp.controller('EmployeeViewController', ['$scope', '$http', '$routeParams', '
 
 
         // TODO get employee by id
-        $http({url: 'http://demo.teamnet.ro:8282/hrapp/employees/'+$routeParams.employeeid, method: 'GET'}).
+        $http({url: 'http://hrapp-zth.rhcloud.com/hrapp/employees/'+$routeParams.employeeid, method: 'GET'}).
             success(function (data) {
                 $scope.employee = data;
             });
